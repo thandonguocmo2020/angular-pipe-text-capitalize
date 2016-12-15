@@ -1,0 +1,1 @@
+# angular-pipe-text-capitalize
