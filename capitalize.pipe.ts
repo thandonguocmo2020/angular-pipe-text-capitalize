@@ -7,10 +7,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CapitalizePipe implements PipeTransform {
     transform(value: string, args: string[]): any {
-        if (!value) return value;
-
-        return value.replace(/\w\S*/g, function(txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
+    if(isString(value)){
+     let  txt : string[] = value.split(" ");
+      let txtReturn : string = "";
+      for(let item of txt){
+       txtReturn +=  item.charAt(0).toUpperCase()+ item.substr(1).toLowerCase() + " ";
+       }
+       return txtReturn;
     }
+    return value;
+  }
 }
